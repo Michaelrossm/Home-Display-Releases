@@ -41,7 +41,7 @@ void button(lv_obj_t* parent,const char* caption,const char* text){
 }
 void build(lv_obj_t* parent){
     SettingsWidgets::label(parent,"Über Home-Display · Lizenzen",0);
-    const String version=String("Home-Display ")+build::kVersion+" · "+build::kProfile;
+    const String version=String("Home-Display ")+hp::build::kVersion+" · "+hp::build::kProfile;
     SettingsWidgets::label(parent,version.c_str(),0);
     SettingsWidgets::label(parent,"Copyright 2026 Michael Roßmann · PolyForm Noncommercial 1.0.0",0,&lv_font_montserrat_16);
     button(parent,"Projektlizenz anzeigen",projectText());

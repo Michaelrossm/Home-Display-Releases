@@ -91,10 +91,12 @@ endif()
 
 # esp_lvgl_adapter exports its private alignment header via `-include`. The
 # Pioarduino ESP-IDF bridge splits that two-token option while importing the
-# CMake compile model. The public alignment definition is retained.
-foreach(_lvgl_target __idf_esp_lvgl_adapter __idf_lvgl)
+# CMake compile model. Use the real namespaced IDF targets and preserve the
+# header, alignment policy and all unrelated flags instead of wiping options.
+include("${CMAKE_SOURCE_DIR}/cmake/compile_options.cmake")
+foreach(_lvgl_target __idf_espressif__esp_lvgl_adapter __idf_lvgl__lvgl)
     if(TARGET ${_lvgl_target})
-        set_property(TARGET ${_lvgl_target} PROPERTY INTERFACE_COMPILE_OPTIONS "")
+        home_display_normalize_forced_includes(${_lvgl_target})
     endif()
 endforeach()
 

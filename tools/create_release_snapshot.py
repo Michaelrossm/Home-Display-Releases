@@ -42,7 +42,24 @@ def export(destination):
         'format':1,'historyIncluded':False,'files':inventory},indent=2,sort_keys=True)+'\n',encoding='utf-8')
     return len(inventory)
 
+def refresh_inventory(destination):
+    destination=Path(destination).resolve()
+    if not (destination/'.git').exists():raise ValueError('Snapshot Git repository required')
+    files=subprocess.check_output(['git','ls-files','-z'],cwd=destination).decode('utf-8').split('\0')
+    inventory={}
+    for name in filter(None,files):
+        if name=='release-source.json':continue
+        if name in PRIVATE_AUDIT_DOCS:raise ValueError('Private file in release snapshot: '+name)
+        source=destination/name
+        if not source.is_file() or source.is_symlink():raise ValueError('Missing/linked snapshot file: '+name)
+        inventory[name]=hashlib.sha256(source.read_bytes()).hexdigest()
+    (destination/'release-source.json').write_text(json.dumps({
+        'format':1,'historyIncluded':False,'files':inventory},indent=2,sort_keys=True)+'\n',encoding='utf-8')
+    return len(inventory)
+
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--out',type=Path,required=True)
-    a=p.parse_args();print('Exported',export(a.out),'source files without Git history to',a.out)
+    p.add_argument('--inventory-only',action='store_true')
+    a=p.parse_args();count=refresh_inventory(a.out) if a.inventory_only else export(a.out)
+    print('Prepared',count,'source files without private Git history in',a.out)
 if __name__=='__main__':main()

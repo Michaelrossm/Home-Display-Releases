@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 import re
 import subprocess
+import shutil
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -19,6 +20,31 @@ def load_tool(name):
     module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module
 
 class ReleasePreparationTests(unittest.TestCase):
+    def test_forced_include_normalizer_preserves_flags_and_is_idempotent(self):
+        cmake=shutil.which('cmake') or str(ROOT/'.pio/core/packages/tool-cmake/bin/cmake.exe')
+        ninja=shutil.which('ninja') or str(ROOT/'.pio/core/packages/tool-ninja/ninja.exe')
+        if not Path(cmake).is_file() or not Path(ninja).is_file():self.skipTest('CMake/Ninja unavailable')
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            (root/'CMakeLists.txt').write_text('cmake_minimum_required(VERSION 3.16)\nproject(flags NONE)\n'
+                'add_library(test_flags INTERFACE)\n'
+                f'include("{(ROOT/"cmake/compile_options.cmake").as_posix()}")\n'+r'''
+set_property(TARGET test_flags PROPERTY INTERFACE_COMPILE_OPTIONS "-Wextra;-include;header with spaces.h;-DFOO=1")
+set_property(TARGET test_flags PROPERTY COMPILE_OPTIONS "-O2;-include;other.h")
+home_display_normalize_forced_includes(test_flags)
+home_display_normalize_forced_includes(test_flags)
+get_target_property(public test_flags INTERFACE_COMPILE_OPTIONS)
+get_target_property(private test_flags COMPILE_OPTIONS)
+if(NOT public STREQUAL "-Wextra;-includeheader with spaces.h;-DFOO=1")
+ message(FATAL_ERROR "Public flags corrupted: ${public}")
+endif()
+if(NOT private STREQUAL "-O2;-includeother.h")
+ message(FATAL_ERROR "Private flags corrupted: ${private}")
+endif()
+''',encoding='utf-8')
+            r=subprocess.run([cmake,'-S',str(root),'-B',str(root/'build'),'-G','Ninja','-DCMAKE_MAKE_PROGRAM='+ninja],capture_output=True,text=True)
+            self.assertEqual(r.returncode,0,r.stdout+r.stderr)
+
     def test_isolation_preserves_all_hardware_profiles_and_schema(self):
         c=configparser.ConfigParser(interpolation=None);c.read(ROOT/'platformio.ini',encoding='utf-8')
         self.assertEqual(c['platformio']['core_dir'],'.pio/core')
@@ -90,6 +116,9 @@ int main(){LuaApp app;assert(access(&app,AppPermission::Camera));assert(access(&
             self.assertFalse((out/'docs/NATIVE-INTERCOM.md').exists())
             self.assertEqual((out/'main.cpp').read_text(),'int main(){}')
             self.assertFalse(json.loads((out/'release-source.json').read_text())['historyIncluded'])
+            subprocess.run(['git','init','-q',str(out)],check=True)
+            subprocess.run(['git','add','.'],cwd=out,check=True)
+            self.assertEqual(tool.refresh_inventory(out),1)
             (root/'secret-private.pem').write_text('not public')
             subprocess.run(['git','add','secret-private.pem'],cwd=root,check=True)
             with self.assertRaises(ValueError):tool.export(Path(d)/'rejected')
