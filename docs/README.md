@@ -4,6 +4,11 @@ Dieser Index verweist auf die gepflegten Einstiegs- und API-Dokumente.
 Versionierte technische Notizen beschreiben ihren damaligen Entwicklungsstand;
 für Build, Partitionen und aktuellen Prüfstand gelten die folgenden Quellen.
 
+## Installation für Benutzer
+
+- [Home Display installieren oder aktualisieren – Schritt für Schritt](INSTALLATION.md)
+- [Erster öffentlicher Download: Version 0.1.0](RELEASE_0.1.0.md)
+
 ## Einrichtung und Architektur
 
 - [Projektübersicht](../README.md), [Entwicklungsregeln](../AGENTS.md)
