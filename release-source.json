@@ -1112,7 +1112,7 @@
     "tests/test_recovery.py": "3e5977376aaedbc2d73462b890951347eb484d1e1309ddabb1992560f140ed94",
     "tests/test_region_service.py": "1b4ba0bf21fc698caf6b5705afd989a29cf0073d18986a5c1b5e0310becf8e97",
     "tests/test_release_architecture.py": "6c7b86d7c2d7e9751ddbdc1ee2bef7f3331217bbfbcc2e4a2155d4d0be6ea195",
-    "tests/test_release_preparation.py": "408b9e0d97ac04b374c7a644d4c3d5a893af4e1d9dc42b049f859c39bc236652",
+    "tests/test_release_preparation.py": "30692e515bd6286eee3f9bb67b3e108dfc8dc4ce79e26f2e91d922ed7825a16d",
     "tests/test_sd_format.py": "390c96dc3803425dc136113cc2fe7dda367dc5bc072d891a0e4bba0d97306a1c",
     "tests/test_sdkconfig_hybrid.py": "4e9c2c8d09a51fc0c90b3d7e9d90d296d5318c434c0ed64c64742ebb4f688558",
     "tests/test_security.py": "eba1f12d8e7d59b99b68829f1d5346e2389e8c12c0133ace0f657fbc90eadb77",
