@@ -1025,7 +1025,7 @@
     "tests/test_appointment_details.py": "b5e0a2724cfc7628d972177aa29558e726cca68cba0b36744d34b7e574f9ec41",
     "tests/test_asset_manifest.py": "3d290ed27e479a1d8977e4d1f32caba751f9d053a7eae906fa3347b6097cf785",
     "tests/test_boot_health.py": "3e2ff9d84caabd629dd75574c63fb34d16ad2e727cf60faa5e749079f6e29ac9",
-    "tests/test_build_hygiene.py": "a9721470ee5d3394011e96707ec8e761c67df32e92a5e46ad7cd64b9d8e9dd82",
+    "tests/test_build_hygiene.py": "2cebba0c65f1dc480cde9e7e670b6c450ea5a5678796acf2ffefa3939ee0b3c7",
     "tests/test_calendar_birthday_input.py": "5ca14e01c3a6d183a84d138c21a452f35c2731a69c4be28558cbc287adb8e57c",
     "tests/test_calendar_json_ownership.py": "501517df32ca3c88300b32790e1342a8cf057c308d463a2e5dc0bd4f2a8bebab",
     "tests/test_calendar_memory.py": "b2207edc0a1640e244bebf970d62cf2fe080177829dc7ae985d5f92cd7a9a90a",

@@ -15,13 +15,20 @@ class BuildHygieneTests(unittest.TestCase):
 
     def test_current_documentation_links_and_partition_metadata(self):
         import json,re
+        from urllib.parse import urlsplit, unquote
         manifest=json.loads((ROOT/'PROJECT_MANIFEST.json').read_text(encoding='utf-8'))
         self.assertEqual(manifest['partition_layout']['ota_0'],'9 MiB')
         self.assertEqual(manifest['developer_setup']['default_env'],'home_display_p4_legacy_dev')
         for rel in ('README.md','docs/README.md'):
             path=ROOT/rel
             for target in re.findall(r'\]\(([^)]+)\)',path.read_text(encoding='utf-8')):
-                self.assertTrue((path.parent/target).is_file(),target)
+                url=urlsplit(target)
+                if url.scheme in ('http','https'):
+                    self.assertTrue(url.hostname, target)
+                    self.assertIsNone(url.username, target)
+                    continue
+                self.assertFalse(url.scheme, target)
+                self.assertTrue((path.parent/unquote(url.path)).is_file(),target)
 
     def test_deepclean_exists(self):
         text=(ROOT/"tools/dev.py").read_text()
