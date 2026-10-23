@@ -504,7 +504,7 @@
     "licenses/third-party/project-components/home_image_codecs/WebP-PATENTS": "cc3273e0694ea5896145e0677699b53471b03ea43021ddc50e7923fbb9f5023c",
     "partitions_32mb.csv": "951bfcec15c58358dae0915f39647884ce0683aa32fa1a578eadb635bd03459a",
     "platformio.ini": "86acc931901fe276c016a067c41fa0ac78fc33bc5847c130ac5fc52caaedd261",
-    "requirements-dev.txt": "40d5511cb301a94eb8e1a2674d8c702f8c0eda03fcadbb2a5d7753af15bca44a",
+    "requirements-dev.txt": "f58f646b7bb8c56333b66f0ad060b78847b3070ad3a02c8964d6ea1b33010ff6",
     "resources/languages/de-DE.json": "ac30b88376399ebf994d2ef5e9c6aed13b6f9c8804e1e3cc796d40d1a3edeeb2",
     "resources/languages/de-DE.zip": "ae58710b49697348ad4fef99d632beb32eedc13afc57cf881b959c094fd0c2e3",
     "sdkconfig.defaults": "c71b584efb874f6f049953b2afc3ff54bbdbaac5ba4dccf6b1133aeb5d7bed82",

@@ -1,3 +1,5 @@
 # Match pioarduino 55.03.311's SCons 4.8.1 tool packaging.
 platformio==6.1.19
 cryptography==49.0.0
+# Independent JPEG/PNG/WebP test fixtures; not linked into the firmware.
+Pillow==12.2.0
