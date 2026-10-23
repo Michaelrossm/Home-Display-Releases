@@ -1,0 +1,16 @@
+#include "RadioDiscovery.h"
+#include "../../services/NetworkService.h"
+#include <Network.h>
+#include <HTTPClient.h>
+
+namespace hp { namespace {
+bool isFsapiResponse(const String& packet) { String value=packet;value.toLowerCase();return value.indexOf("frontier")>=0||value.indexOf("fsapi")>=0||value.indexOf("undok")>=0; }
+String header(const String& packet,const char* key) { String lower=packet;lower.toLowerCase();String needle=String(key)+":";needle.toLowerCase();int start=lower.indexOf(needle);if(start<0)return {};start+=needle.length();while(start<(int)packet.length()&&(packet[start]==' '||packet[start]=='\t'))++start;int end=packet.indexOf('\n',start);String result=packet.substring(start,end<0?packet.length():end);result.trim();return result; }
+String xmlText(const String& xml,const char* tag) { const String open=String("<")+tag+">",close=String("</")+tag+">";int a=xml.indexOf(open);if(a<0)return {};a+=open.length();int b=xml.indexOf(close,a);if(b<0)return {};String result=xml.substring(a,b);result.trim();return result; }
+String encoded(const String& pin) { String result;const char* hex="0123456789ABCDEF";for(size_t i=0;i<pin.length();++i){const uint8_t c=pin[i];if(isalnum(c)||c=='-'||c=='_'||c=='.'||c=='~')result+=(char)c;else{result+='%';result+=hex[c>>4];result+=hex[c&15];}}return result; }
+bool probe(const String& host,const String& pin,String& name) { NetworkClient client;HTTPClient http;http.setConnectTimeout(900);http.setTimeout(900);const String url="http://"+host+"/fsapi/GET/netRemote.sys.info.friendlyName?pin="+encoded(pin.length()?pin:"1234");if(!http.begin(client,url))return false;const int status=http.GET();const String xml=status==HTTP_CODE_OK?http.getString():String();http.end();if(status!=HTTP_CODE_OK||xml.indexOf("<status>FS_OK</status>")<0)return false;name=xmlText(xml,"c8_array");return name.length()>0; }
+}
+int RadioDiscovery::discover(RadioDiscoveryDevice* out,int capacity,const String& pin,uint16_t timeoutMs) {
+ if(!out||capacity<1||!NetworkService::instance().online())return 0;for(int i=0;i<capacity;++i)out[i]={};NetworkUDP udp;if(!udp.begin(0))return 0;const IPAddress group(239,255,255,250);const char* targets[]={"urn:schemas-frontier-silicon-com:fs_reference:fsapi:1","ssdp:all"};for(auto target:targets){const String request="M-SEARCH * HTTP/1.1\r\nHOST: 239.255.255.250:1900\r\nMAN: \"ssdp:discover\"\r\nMX: 2\r\nST: "+String(target)+"\r\n\r\n";udp.beginPacket(group,1900);udp.write((const uint8_t*)request.c_str(),request.length());udp.endPacket();delay(30);}int count=0;char buffer[1500];const uint32_t started=millis();while(millis()-started<timeoutMs){const int size=udp.parsePacket();if(size<=0){delay(3);continue;}const int n=udp.read(buffer,sizeof(buffer)-1);if(n<=0)continue;buffer[n]=0;String packet(buffer);if(!isFsapiResponse(packet))continue;const String host=udp.remoteIP().toString();bool duplicate=false;for(int i=0;i<count;++i)if(host==out[i].host){duplicate=true;break;}if(duplicate||count>=capacity)continue;String name;const bool verified=probe(host,pin,name);strlcpy(out[count].host,host.c_str(),sizeof(out[count].host));strlcpy(out[count].name,(name.length()?name:"UNDOK / FSAPI Radio").c_str(),sizeof(out[count].name));out[count].verified=verified;++count;}udp.stop();return count;
+}
+}

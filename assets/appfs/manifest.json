@@ -1,0 +1,11 @@
+{
+  "build": "0.1.0",
+  "files": {
+    "README.txt": {
+      "sha256": "7b29bb7f909829ff27fa5711f1897e36b3ec33bc38dc97732b252408de187f56",
+      "size": 69
+    }
+  },
+  "product": "Home-Display",
+  "schema": 1
+}

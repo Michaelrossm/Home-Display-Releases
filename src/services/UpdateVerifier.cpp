@@ -1,0 +1,17 @@
+#include "UpdateVerifier.h"
+#include "BuildInfo.h"
+#include "UpdateSigningKey.h"
+#include <ArduinoJson.h>
+#include <esp_partition.h>
+#include <mbedtls/sha256.h>
+#include <mbedtls/pk.h>
+namespace hp {
+UpdateVerifier& UpdateVerifier::instance(){static UpdateVerifier v;return v;}
+uint32_t UpdateVerifier::versionCode(const String&s){unsigned a=0,b=0,c=0;if(sscanf(s.c_str(),"%u.%u.%u",&a,&b,&c)!=3||a>255||b>255||c>255)return 0;return(a<<16)|(b<<8)|c;}
+bool UpdateVerifier::validSha256(const String&h){if(h.length()!=64)return false;for(size_t i=0;i<h.length();++i)if(!isxdigit((unsigned char)h[i]))return false;return true;}
+bool UpdateVerifier::hexToBytes(const String&h,uint8_t out[32]){if(!validSha256(h))return false;auto nibble=[](char c)->uint8_t{return c>='0'&&c<='9'?c-'0':c>='a'&&c<='f'?c-'a'+10:c-'A'+10;};for(size_t i=0;i<32;++i)out[i]=(uint8_t)((nibble(h[i*2])<<4)|nibble(h[i*2+1]));return true;}
+bool UpdateVerifier::parseManifest(const String&json,UpdateManifest&o,String&e)const{if(json.length()<16||json.length()>8192){e="manifest_size";return false;}JsonDocument d;auto er=deserializeJson(d,json);if(er){e="manifest_json";return false;}if(d["format"].as<uint32_t>()!=build::kUpdateManifestSchema){e="manifest_schema";return false;}o.schema=d["format"];o.product=d["product"].as<String>();o.version=d["firmwareVersion"].as<String>();o.versionCode=versionCode(o.version);if(o.product!=build::kProduct||!o.versionCode){e="product_or_version";return false;}auto load=[&](const char*k,UpdateImageSpec&x){JsonObject q=d[k];if(q.isNull())return true;x.name=k;x.size=q["size"]|0;x.sha256=q["sha256"].as<String>();return x.size>0&&validSha256(x.sha256);};if(!load("firmware",o.firmware)||!load("systemData",o.systemData)||!load("appFs",o.appFs)){e="image_spec";return false;}if(o.firmware.size<1024){e="firmware_size";return false;}return true;}
+bool UpdateVerifier::verifyManifestSignature(const String&json,const uint8_t*sig,size_t n,String&e)const{if(!update_key::kPem[0]){e="signing_key_missing";return false;}if(!sig||n<64||n>128){e="signature_size";return false;}uint8_t digest[32];mbedtls_sha256((const uint8_t*)json.c_str(),json.length(),digest,0);mbedtls_pk_context pk;mbedtls_pk_init(&pk);int rc=mbedtls_pk_parse_public_key(&pk,(const uint8_t*)update_key::kPem,strlen(update_key::kPem)+1);if(!rc)rc=mbedtls_pk_verify(&pk,MBEDTLS_MD_SHA256,digest,sizeof(digest),sig,n);mbedtls_pk_free(&pk);if(rc){e="signature_invalid";return false;}return true;}
+bool UpdateVerifier::hashPartitionRaw(const char*l,uint32_t n,uint8_t out[32])const{const esp_partition_t*p=esp_partition_find_first(ESP_PARTITION_TYPE_ANY,ESP_PARTITION_SUBTYPE_ANY,l);if(!p||n>p->size)return false;constexpr size_t kBufferSize=8192;mbedtls_sha256_context c;mbedtls_sha256_init(&c);if(mbedtls_sha256_starts(&c,0)!=0){mbedtls_sha256_free(&c);return false;}uint8_t*b=(uint8_t*)ps_malloc(kBufferSize);if(!b)b=(uint8_t*)malloc(kBufferSize);if(!b){mbedtls_sha256_free(&c);return false;}bool ok=true;for(uint32_t off=0;off<n&&ok;){size_t z=min<uint32_t>(kBufferSize,n-off);ok=esp_partition_read(p,off,b,z)==ESP_OK&&mbedtls_sha256_update(&c,b,z)==0;off+=z;}if(ok)ok=mbedtls_sha256_finish(&c,out)==0;free(b);mbedtls_sha256_free(&c);return ok;}
+bool UpdateVerifier::verifyPartitionRaw(const char*l,uint32_t n,const String&hex,String&e)const{uint8_t want[32],got[32];if(!hexToBytes(hex,want)||!hashPartitionRaw(l,n,got)){e="partition_hash_read";return false;}if(memcmp(want,got,32)){e="partition_hash_mismatch";return false;}return true;}
+}

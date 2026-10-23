@@ -1,0 +1,30 @@
+dependencies:
+  espressif/usb_host_msc:
+    version: "1.1.4"
+    require: public
+  idf:
+    version: ">=5.5.0,<5.6.0"
+
+  waveshare/esp32_p4_platform:
+    version: "2.0.1"
+
+  lvgl/lvgl:
+    version: "9.3.0"
+
+  chmorgan/esp-audio-player:
+    version: "1.1.0"
+
+  chmorgan/esp-libhelix-mp3:
+    version: "1.0.3"
+
+  # Scripting runtime for installable/updatable app UI logic (LuaApp bridge).
+  espressif/lua:
+    version: "5.5.0"
+
+  # Official software Baseline decoder, not a second video framework.
+  espressif/esp_h264:
+    version: "1.4.0"
+
+  # Official ESP Component Registry port; SMB2/3 only, no obsolete SMB1.
+  sahlberg/libsmb2:
+    version: "3.0.1"

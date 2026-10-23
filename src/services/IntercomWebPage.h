@@ -1,0 +1,42 @@
+#pragma once
+#include <Arduino.h>
+namespace hp {
+inline const char intercomWebPage[] PROGMEM=R"HTML(<!doctype html>
+<html lang="de"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sprechanlage · Home-Display</title><style>
+:root{color-scheme:dark}body{margin:auto;max-width:1100px;padding:24px;font:16px system-ui;background:#0d141d;color:#f2f6fb}
+header,.tools{display:flex;gap:12px;align-items:center;flex-wrap:wrap}header{justify-content:space-between}a{color:#72b5ff}
+main{display:grid;grid-template-columns:320px 1fr;gap:18px;margin-top:22px}.card{border:1px solid #30445d;background:#172231;border-radius:18px;padding:20px;margin-bottom:14px}
+h1{font-size:25px}h2{font-size:20px}label{display:block;margin:12px 0 5px;color:#b3c3d6}input,select,button{font:inherit;box-sizing:border-box;border:1px solid #30445d;border-radius:10px;padding:11px;background:#223249;color:inherit}
+input,select{width:100%}button{cursor:pointer}button.primary{background:#247dd8}button:disabled{opacity:.45;cursor:default}.small{font-size:13px;color:#b3c3d6}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px}#status{min-height:24px}input[type=checkbox]{width:auto}
+@media(max-width:800px){main{grid-template-columns:1fr}}
+</style><header><div><h1>Sprechanlage</h1><span class="small">Lokale Geräte · gemeinsame Firmware-Einstellungen</span></div><a href="/">Home-Display</a></header>
+<p class="small">Kamera-Adapter sind keine vollständigen Innenmonitore. Klingeln, Gegensprechen und Türöffnung sind nicht als Hersteller-kompatibel verifiziert. SIP ist noch nicht verfügbar.</p>
+<div class="tools"><button onclick="load()">Aktualisieren</button><button onclick="add()">Gerät hinzufügen</button><button onclick="diagnose()">RAM / Diagnose</button></div><p id="status" role="status"></p>
+<main><aside id="devices"></aside><section class="card"><h2 id="title">Gerät auswählen</h2><form id="form" hidden>
+<label>Hersteller / Adapter</label><select id="provider"><option value="dahua">Goliath / Dahua – Video</option><option value="hikvision">Hikvision – Video</option><option value="doorbird">DoorBird – Video</option><option value="lan_event">Authentifizierte LAN-Rufereignisse</option><option disabled>SIP – nicht implementiert</option></select>
+<label><input id="httpVideo" type="checkbox"> HTTP JPEG / MJPEG statt RTSP</label>
+<label><input id="ringTone" type="checkbox"> Klingelton bei bestätigten Rufereignissen</label>
+<div id="fields"></div><label><input id="enabled" type="checkbox"> Gerät aktivieren</label>
+<div class="tools" id="dahuaProfiles" hidden><button type="button" onclick="dahuaProfile(false)">Dahua Live-Profil</button><button type="button" onclick="dahuaProfile(true)">Dahua JPEG-Profil</button></div>
+<p class="small">VTO2000A an der vorhandenen Station geprüft: RTSP Basic, H.264 Baseline/25 FPS Quelle und HTTP-JPEG. Das bestätigt noch kein Klingelrouting oder Gegensprechen.</p>
+<div class="tools" style="margin-top:20px"><button type="submit" class="primary">Speichern</button><button type="button" id="remove" onclick="removeDevice()">Löschen</button></div>
+<p class="small">Passwort leer lassen: gespeichert beibehalten. Zugangsdaten werden nicht zurückgegeben. Livebild am Display ausdrücklich starten.</p></form><pre id="diagnostic"></pre></section></main>
+<script src="/app-web-lifecycle.js"></script><script>
+const $=id=>document.getElementById(id);let token='',profiles=[],selected=null,busy=false;
+const fields=[['name','Name',64],['host','IP / Hostname',96],['username','Benutzername',64],['password','Passwort (leer = unverändert)',192],['participant','Teilnehmer / Wohnung',64],['port','HTTP-Port',5],['videoPort','Video-Port',5],['videoPath','Stream-Pfad (leer = Herstellerprofil)',192],['fps','Ausgabe-FPS (1–10)',2]];
+for(const [key,name,length]of fields){let l=document.createElement('label');l.textContent=name;let i=document.createElement('input');i.id=key;i.maxLength=length;i.type=key==='password'?'password':'text';if(key==='password')i.autocomplete='new-password';$('fields').append(l,i)}
+async function api(url,options={}){options.credentials='same-origin';options.cache='no-store';options.headers=options.headers||{};if(options.method==='POST'){if(!token)token=(await api('/api/csrf')).token;options.headers['X-HP-CSRF']=token;options.headers['Content-Type']='application/json'}let r=await hpWeb.fetch(url,options);let text=await r.text();if(!r.ok)throw Error(text||r.status);return JSON.parse(text)}
+async function job(op,args={}){hpWeb.requireVisible();if(busy)throw Error('Bitte laufenden Auftrag abwarten.');busy=true;try{let {job}=await api('/api/intercom/settings',{method:'POST',body:JSON.stringify({op,args})});let end=Date.now()+30000;while(Date.now()<end){await new Promise(r=>setTimeout(r,250));let r=await api('/api/intercom/result?id='+job);if(r.done){if(!r.ok)throw Error(r.error||'Auftrag fehlgeschlagen.');return r.value}}throw Error('Zeitüberschreitung. Schreibauftrag nicht automatisch wiederholen.')}finally{busy=false}}
+function edit(p){selected={...p};$('title').textContent=p.name;$('form').hidden=false;$('diagnostic').textContent='';let old=p.id==='legacy-goliath';$('provider').value=p.provider;$('provider').disabled=old;$('httpVideo').checked=!!p.httpVideo||p.provider==='doorbird';$('httpVideo').disabled=old;$('ringTone').checked=p.ringTone!==false;$('ringTone').disabled=p.provider!=='lan_event';for(const [key]of fields){$(key).value=key==='password'?'':p[key]??'';$(key).disabled=old&&['name','videoPath','fps'].includes(key)}$('enabled').checked=!!p.enabled;$('remove').disabled=old;$('dahuaProfiles').hidden=old||p.provider!=='dahua'}
+function add(){let ids=new Set(profiles.map(p=>p.id));let id='';for(let i=1;i<=4;i++)if(!ids.has('intercom-'+i)){id='intercom-'+i;break}if(!id){$('status').textContent='Maximal vier zusätzliche Geräte.';return}edit({id,name:'Neue Sprechanlage',provider:'dahua',host:'',participant:'',port:80,videoPort:554,fps:5,videoPath:'/cam/realmonitor?channel=1&subtype=1',enabled:false})}
+function dahuaProfile(snapshot){if(!selected||selected.id==='legacy-goliath'||$('provider').value!=='dahua')return;$('httpVideo').checked=snapshot;$('videoPort').value=snapshot?80:554;$('videoPath').value=snapshot?'/cgi-bin/snapshot.cgi?channel=1':'/cam/realmonitor?channel=1&subtype=1';$('fps').value=snapshot?1:5;$('status').textContent='Profil ausgewählt. Speichern und Livebild am Display starten. Zugangsdaten bleiben unverändert.'}
+async function load(){try{let v=await job('list');profiles=v.devices;$('devices').replaceChildren();for(const p of profiles){let c=document.createElement('div');c.className='card';let h=document.createElement('h2');h.textContent=p.name;let l=document.createElement('p');l.className='small';l.textContent=p.provider+' · '+p.host+' · '+(p.enabled?'Aktiv, Verbindung ungeprüft':'Deaktiviert');let b=document.createElement('button');b.textContent='Bearbeiten';b.onclick=()=>edit(p);c.append(h,l,b);$('devices').append(c)}$('status').textContent='Geräte geladen.'}catch(e){$('status').textContent=e.message}}
+$('provider').onchange=()=>{let p=$('provider').value;$('videoPort').value=p==='doorbird'?80:554;$('httpVideo').checked=p==='doorbird';$('ringTone').disabled=p!=='lan_event';$('dahuaProfiles').hidden=p!=='dahua';$('videoPath').value=p==='dahua'?'/cam/realmonitor?channel=1&subtype=1':p==='hikvision'?'/Streaming/channels/102':p==='doorbird'?'/bha-api/video.cgi':''};
+$('form').onsubmit=async e=>{e.preventDefault();if(!selected)return;try{let args={...selected,provider:$('provider').value,httpVideo:$('httpVideo').checked,ringTone:$('ringTone').checked,enabled:$('enabled').checked};for(const [key]of fields)args[key]=['port','videoPort','fps'].includes(key)?Number($(key).value):$(key).value;if(!args.password)delete args.password;await job('save',args);$('password').value='';$('status').textContent='Gespeichert.';await load()}catch(e){$('status').textContent=e.message}};
+async function removeDevice(){if(!selected||!confirm('Gerät '+selected.name+' wirklich löschen?'))return;try{await job('remove',{id:selected.id});selected=null;$('form').hidden=true;await load()}catch(e){$('status').textContent=e.message}}
+async function diagnose(){try{$('diagnostic').textContent=JSON.stringify(await api('/api/intercom/diagnostics'),null,2)}catch(e){$('status').textContent=e.message}}
+hpWeb.whenVisible(load);
+hpWeb.onResume(()=>{if(!busy)return load()});
+</script></html>)HTML";
+}

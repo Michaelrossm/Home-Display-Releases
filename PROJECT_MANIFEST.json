@@ -1,0 +1,60 @@
+{
+  "project": "Home-Display-ESP32P4",
+  "version": "0.1.0",
+  "config_schema": 2,
+  "target": "Waveshare ESP32-P4-WIFI6-POE-ETH-D",
+  "display": "1280x800 landscape; native panel 800x1280",
+  "flash": "32 MiB",
+  "psram": "32 MiB",
+  "native_app_sources": [
+    "browser",
+    "files",
+    "calendar",
+    "phonebook",
+    "calculator",
+    "photos",
+    "settings",
+    "music"
+  ],
+  "installable_apps": "External/local packages; not tracked in this firmware repository",
+  "disabled_features": ["intercom"],
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "partition_layout": {
+    "ota_0": "9 MiB",
+    "ota_1": "9 MiB",
+    "appfs": "9 MiB",
+    "systemdata": "4.8125 MiB",
+    "coredump": "64 KiB",
+    "source": "partitions_32mb.csv"
+  },
+  "developer_setup": {
+    "entrypoint": "python tools/dev.py",
+    "default_env": "home_display_p4_legacy_dev",
+    "r3_env": "home_display_p4_r3_dev",
+    "platform": "pioarduino 55.03.311",
+    "arduino_esp32": "3.3.11",
+    "esp_idf": "5.5.5",
+    "lvgl": "9.3.0",
+    "freertos_hz": 1000
+  },
+  "hardware_profiles": {
+    "legacy": "pre-v3 / 360 MHz",
+    "r3": "v3.x / 400 MHz",
+    "ethernet_phy": "IP101",
+    "radio": "ESP32-C6 / separate ESP-Hosted firmware",
+    "audio": "ES8311"
+  },
+  "architecture": {
+    "board": "waveshare/esp32_p4_platform 2.0.1",
+    "lvgl_owner": "Waveshare BSP / esp_lvgl_adapter",
+    "storage": "StorageService",
+    "settings": "ConfigService / SettingsService / CredentialStore",
+    "network": "NetworkService / NetworkWorker",
+    "images": "ImageCodec / ImageResourceService",
+    "ota": "A/B / TransactionJournal / BootHealthCheck",
+    "mdns": "MinimalMdns"
+  },
+  "documentation": "docs/README.md",
+  "validation": "docs/VALIDATION.md",
+  "hardware_validation": "Builds and host tests do not certify device performance or production readiness"
+}

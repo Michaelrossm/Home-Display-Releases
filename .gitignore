@@ -1,0 +1,37 @@
+.pio/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+include/secrets.h
+sdkconfig
+sdkconfig.*
+!sdkconfig.defaults
+!config/sdkconfig.*
+managed_components/
+build/
+build-*.log
+*.bin
+!firmware/
+!firmware/c6/
+!firmware/c6/esp-hosted-2.12.13/
+!firmware/c6/esp-hosted-2.12.13/**/*.bin
+*.elf
+*.map
+.DS_Store
+build_log*.txt
+build_final.txt
+__pycache__/
+*.pyc
+*.private.pem
+*-private.pem
+signing/*.key
+/release/
+
+# Installable apps are local/external packages, not firmware sources.
+# Native integrated apps remain tracked under src/apps/.
+/apps/
+/examples/lua-app-template/
+/dist/*.zip
+*.vor_fix.bak
+

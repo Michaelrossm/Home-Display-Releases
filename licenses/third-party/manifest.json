@@ -1,0 +1,586 @@
+[
+  {
+    "file": "components/chmorgan__esp-audio-player/LICENSE",
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  {
+    "file": "components/chmorgan__esp-libhelix-mp3/libhelix-mp3/docs/LICENSE.txt",
+    "sha256": "86cd65f6dd725044f6cd23e8ddab1dd447722d58b74bc6b9a3a13088fa8b44fa"
+  },
+  {
+    "file": "components/chmorgan__esp-libhelix-mp3/libhelix-mp3/LICENSE.txt",
+    "sha256": "86cd65f6dd725044f6cd23e8ddab1dd447722d58b74bc6b9a3a13088fa8b44fa"
+  },
+  {
+    "file": "components/chmorgan__esp-libhelix-mp3/libhelix-mp3/pub/LICENSE.txt",
+    "sha256": "86cd65f6dd725044f6cd23e8ddab1dd447722d58b74bc6b9a3a13088fa8b44fa"
+  },
+  {
+    "file": "components/chmorgan__esp-libhelix-mp3/libhelix-mp3/real/arm/LICENSE.txt",
+    "sha256": "86cd65f6dd725044f6cd23e8ddab1dd447722d58b74bc6b9a3a13088fa8b44fa"
+  },
+  {
+    "file": "components/chmorgan__esp-libhelix-mp3/libhelix-mp3/real/LICENSE.txt",
+    "sha256": "86cd65f6dd725044f6cd23e8ddab1dd447722d58b74bc6b9a3a13088fa8b44fa"
+  },
+  {
+    "file": "components/chmorgan__esp-libhelix-mp3/libhelix-mp3/real/projects/armads/LICENSE.txt",
+    "sha256": "86cd65f6dd725044f6cd23e8ddab1dd447722d58b74bc6b9a3a13088fa8b44fa"
+  },
+  {
+    "file": "components/chmorgan__esp-libhelix-mp3/libhelix-mp3/real/projects/armwince/LICENSE.txt",
+    "sha256": "86cd65f6dd725044f6cd23e8ddab1dd447722d58b74bc6b9a3a13088fa8b44fa"
+  },
+  {
+    "file": "components/chmorgan__esp-libhelix-mp3/libhelix-mp3/real/projects/visualc/LICENSE.txt",
+    "sha256": "86cd65f6dd725044f6cd23e8ddab1dd447722d58b74bc6b9a3a13088fa8b44fa"
+  },
+  {
+    "file": "components/chmorgan__esp-libhelix-mp3/libhelix-mp3/testwrap/LICENSE.txt",
+    "sha256": "86cd65f6dd725044f6cd23e8ddab1dd447722d58b74bc6b9a3a13088fa8b44fa"
+  },
+  {
+    "file": "components/chmorgan__esp-libhelix-mp3/LICENSE",
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  {
+    "file": "components/espressif__button/license.txt",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "components/espressif__cjson/cJSON/LICENSE",
+    "sha256": "a36dda207c36db5818729c54e7ad4e8b0c6fba847491ba64f372c1a2037b6d5c"
+  },
+  {
+    "file": "components/espressif__cjson/cJSON/tests/unity/docs/license.txt",
+    "sha256": "3ed9b51da86f52c729c96cc99fdde6444b2297c788a9cf4ad1d3649dc34c4985"
+  },
+  {
+    "file": "components/espressif__cjson/LICENSE",
+    "sha256": "a36dda207c36db5818729c54e7ad4e8b0c6fba847491ba64f372c1a2037b6d5c"
+  },
+  {
+    "file": "components/espressif__cmake_utilities/license.txt",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "components/espressif__eppp_link/LICENSE",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "components/espressif__esp-dl/LICENSE",
+    "sha256": "3513f1605ebcc227f7364956f6c30a303412597e232648cb3090e76697ca5aa3"
+  },
+  {
+    "file": "components/espressif__esp-dsp/LICENSE",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "components/espressif__esp-modbus/components/mb_console_helper/LICENSE",
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  {
+    "file": "components/espressif__esp-modbus/LICENSE",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "components/espressif__esp-sr/LICENSE",
+    "sha256": "7d916fb00bc0742c47cafb0d0144b67f826d76779730b1cb8796045ea6ba1b9a"
+  },
+  {
+    "file": "components/espressif__esp_codec_dev/device/zl38063/LICENSE.txt",
+    "sha256": "d8023d14377b7e734064165e0ddf5961d0bfc1ab037bc63ad682cf295369964d"
+  },
+  {
+    "file": "components/espressif__esp_codec_dev/LICENSE",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "components/espressif__esp_h264/LICENSE",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "components/espressif__esp_hosted/common/protobuf-c/LICENSE",
+    "sha256": "b8999cb392cc5bbe8cd679de59584ad8d2f26033123e76f1d662fa14b9d4f287"
+  },
+  {
+    "file": "components/espressif__esp_hosted/LICENSE",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "components/espressif__esp_hosted/slave/main/common/protobuf-c/LICENSE",
+    "sha256": "b8999cb392cc5bbe8cd679de59584ad8d2f26033123e76f1d662fa14b9d4f287"
+  },
+  {
+    "file": "components/espressif__esp_lcd_ek79007/license.txt",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "components/espressif__esp_lcd_st7701/license.txt",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "components/espressif__esp_lcd_touch/license.txt",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "components/espressif__esp_lcd_touch_gt911/license.txt",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "components/espressif__esp_lv_decoder/license.txt",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "components/espressif__esp_lv_fs/license.txt",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "components/espressif__esp_lvgl_adapter/LICENSE",
+    "sha256": "862f600b4c27954a54933f5c00fe4d92bae02bab216d795876ebd76aa6f5538d"
+  },
+  {
+    "file": "components/espressif__esp_mmap_assets/license.txt",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "components/espressif__esp_modem/LICENSE",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "components/espressif__esp_new_jpeg/LICENSE",
+    "sha256": "0bf7f2018fffa1caff5ecbf10d79707b218eea4e26b8c705d744de4556552815"
+  },
+  {
+    "file": "components/espressif__esp_serial_slave_link/LICENSE",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "components/espressif__esp_wifi_remote/LICENSE",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "components/espressif__esp_wifi_remote/scripts/copyright_header.h",
+    "sha256": "3f1f5a14957ce74b5409f9fa151c0963a5e8ef8a928faafa90e632af49d9ab71"
+  },
+  {
+    "file": "components/espressif__freetype/examples/color-emoji-example/main/assets/LICENSE-OFL.txt",
+    "sha256": "6a73f9541c2de74158c0e7cf6b0a58ef774f5a780bf191f2d7ec9cc53efe2bf2"
+  },
+  {
+    "file": "components/espressif__freetype/freetype/LICENSE.TXT",
+    "sha256": "bd36c8b474855fa294c2ec5c184544478ef3720aad37d65a6296a4f264fd2d3b"
+  },
+  {
+    "file": "components/espressif__freetype/freetype/subprojects/dlg/LICENSE",
+    "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566"
+  },
+  {
+    "file": "components/espressif__freetype/LICENSE",
+    "sha256": "594cbe9628b6681596b8ade0ca01c79a39ed3c768da46ae35cddebac63cd6f6d"
+  },
+  {
+    "file": "components/espressif__i2c_bus/license.txt",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "components/espressif__knob/license.txt",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "components/espressif__lan867x/LICENSE",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "components/espressif__lan86xx_common/LICENSE",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "components/espressif__libpng/libpng/ci/LICENSE_MIT.txt",
+    "sha256": "508a77d2e7b51d98adeed32648ad124b7b30241a8e70b2e72c99f92d8e5874d1"
+  },
+  {
+    "file": "components/espressif__libpng/libpng/contrib/gregbook/COPYING",
+    "sha256": "d6cb0e9e560f51085556949a84af12b79a00f10ab8b66c752537faf7cd665572"
+  },
+  {
+    "file": "components/espressif__libpng/libpng/contrib/gregbook/LICENSE",
+    "sha256": "b6a03c1803eb58ffb1f1278d5c7d4096c4c116e66dce8a7553e8c77d163c3438"
+  },
+  {
+    "file": "components/espressif__libpng/libpng/contrib/pngexif/LICENSE_MIT.txt",
+    "sha256": "508a77d2e7b51d98adeed32648ad124b7b30241a8e70b2e72c99f92d8e5874d1"
+  },
+  {
+    "file": "components/espressif__libpng/libpng/contrib/pngminus/LICENSE.txt",
+    "sha256": "1806f1f10d393e9e377b3a8d1b968452b54f1a90378f14eeef45426946ace330"
+  },
+  {
+    "file": "components/espressif__libpng/libpng/LICENSE",
+    "sha256": "bdb0a645ea18c60507d0368379b1ac5474b92255fcc2d115e07486a7672ba526"
+  },
+  {
+    "file": "components/espressif__libpng/LICENSE",
+    "sha256": "bf5e22b9dce8464064ae17a48ea1133c3369ac9e1d80ef9e320e5219aa14ea9b"
+  },
+  {
+    "file": "components/espressif__libsodium/libsodium/LICENSE",
+    "sha256": "508a76d186356c0dd807a670ef510964f8724557024796a2c426c6c0e19ab683"
+  },
+  {
+    "file": "components/espressif__libsodium/LICENSE",
+    "sha256": "508a76d186356c0dd807a670ef510964f8724557024796a2c426c6c0e19ab683"
+  },
+  {
+    "file": "components/espressif__lua/LICENSE",
+    "sha256": "9c5ec0ae32e33e23027d88f38f863c7c56f3d3fea54e4d37df556cd582894112"
+  },
+  {
+    "file": "components/espressif__mdns/LICENSE",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "components/espressif__network_provisioning/LICENSE",
+    "sha256": "f0f612d1627194ddd07c8b5b238a514ae9794632e5470c00f16237def7dc2246"
+  },
+  {
+    "file": "components/espressif__usb_host_msc/LICENCE",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "components/espressif__zlib/LICENSE",
+    "sha256": "845efc77857d485d91fb3e0b884aaa929368c717ae8186b66fe1ed2495753243"
+  },
+  {
+    "file": "components/espressif__zlib/zlib/contrib/dotzlib/LICENSE_1_0.txt",
+    "sha256": "36266a8fd073568394cb81cdb2b124f7fdae2c64c1a7ed09db34b4d22efa2951"
+  },
+  {
+    "file": "components/espressif__zlib/zlib/contrib/minizip/LICENSE.Info-Zip",
+    "sha256": "fc686023047ce5ce3a18a9b8a777156f0e475929d3de06bac279f3c025d2b2ca"
+  },
+  {
+    "file": "components/espressif__zlib/zlib/LICENSE",
+    "sha256": "e32ff4e00d9d94930537635291da39e7e612703334bf6fde8c7f1686fe8a45a2"
+  },
+  {
+    "file": "components/joltwallet__littlefs/LICENSE",
+    "sha256": "b6bbf3bd17c2b5532bc25a7acf1760faac0b995d6e0ad8bec29435166727d4c5"
+  },
+  {
+    "file": "components/joltwallet__littlefs/src/littlefs/LICENSE.md",
+    "sha256": "0cb4ff1daf5fdc1359c6a6ee3116092f08fc100c9d58b1b77ab17bfd801f856d"
+  },
+  {
+    "file": "components/lvgl__lvgl/examples/libs/freetype/OFL.txt",
+    "sha256": "3200a0abfc0ceba649de8ee433cfe5a7cb8c441cdf32b9e1a4a070e38621cef2"
+  },
+  {
+    "file": "components/lvgl__lvgl/LICENCE.txt",
+    "sha256": "27a80bd36832ab42d35ad60c08b2b230a807a9bc0d58e94ec1531543dc49cbe8"
+  },
+  {
+    "file": "components/lvgl__lvgl/scripts/built_in_font/font_license/DejaVuSans/LICENSE",
+    "sha256": "d75938dec098f06f0ac3c00853065d94f020be1c3c62ef1dc2975ba15b4d9b0e"
+  },
+  {
+    "file": "components/lvgl__lvgl/scripts/built_in_font/font_license/FontAwesome5/LICENSE.txt",
+    "sha256": "de784a808496d49f5f80dd9d1d6e9a51cff712cfbc339e7c25155631ae3cdb5d"
+  },
+  {
+    "file": "components/lvgl__lvgl/scripts/built_in_font/font_license/Montserrat/OFL.txt",
+    "sha256": "41f82bb4d24b304f30f7136bc47abdd083782e4265c984160f5649d1e78ea49c"
+  },
+  {
+    "file": "components/lvgl__lvgl/scripts/built_in_font/font_license/SourceHanSansSC/LICENSE.txt",
+    "sha256": "f55c2d43dd905011515f5e46ba78d180027e314ef8ccaaf53a9e88fe316767cd"
+  },
+  {
+    "file": "components/lvgl__lvgl/src/libs/barcode/LICENSE.txt",
+    "sha256": "bc9492ba4839f81fed80aa4b966e7078b18fc7f0d81cf47aa3c04a86047099f1"
+  },
+  {
+    "file": "components/lvgl__lvgl/src/libs/expat/LICENSE.txt",
+    "sha256": "31b15de82aa19a845156169a17a5488bf597e561b2c318d159ed583139b25e87"
+  },
+  {
+    "file": "components/lvgl__lvgl/src/libs/freetype/LICENSE.txt",
+    "sha256": "21878c9be611eecf3f936301e277f77719c14316a5132c0877c4d0dc54e5470c"
+  },
+  {
+    "file": "components/lvgl__lvgl/src/libs/gif/LICENSE.txt",
+    "sha256": "910f11cb457d2b125544615a038af00ad73b59516e51af42cecf084543beccbc"
+  },
+  {
+    "file": "components/lvgl__lvgl/src/libs/lodepng/LICENSE.txt",
+    "sha256": "f43c59ae0979ea7c08b24a56cfe7816f3c82141d13f5866a2040f66b02589771"
+  },
+  {
+    "file": "components/lvgl__lvgl/src/libs/lz4/LICENSE.txt",
+    "sha256": "8b58c446121a109ccf32edc094bba3010a3d85e4ee3702950db55e4d3e87736c"
+  },
+  {
+    "file": "components/lvgl__lvgl/src/libs/qrcode/LICENSE.txt",
+    "sha256": "4d3b92a5e730466508ed46e8632140dfb96221bacfa18c95355cee161e7a22c8"
+  },
+  {
+    "file": "components/lvgl__lvgl/src/libs/thorvg/LICENSE.txt",
+    "sha256": "861eb0197d1b43e3c904c433b605cf38be3c4bc447bb9752dfad74c704e36af7"
+  },
+  {
+    "file": "components/lvgl__lvgl/src/libs/tiny_ttf/LICENSE.txt",
+    "sha256": "f214b427f12e19d68f65e2e30a3c9a1f59ee4a09d4c684931971a8f3bfdd7a1f"
+  },
+  {
+    "file": "components/lvgl__lvgl/src/libs/tjpgd/LICENSE.txt",
+    "sha256": "e85563f195d82708ca334e85c63d0352c980ccc66dca2052e9fd05f7823df51c"
+  },
+  {
+    "file": "components/lvgl__lvgl/src/stdlib/builtin/LICENSE_SPRINTF.txt",
+    "sha256": "ec49d3c5a052dba6392f3e5e6d51134d102624c19afab6b3dd9ff8921d85403d"
+  },
+  {
+    "file": "components/lvgl__lvgl/src/stdlib/builtin/LICENSE_TLSF.txt",
+    "sha256": "2b32f144050a1236599765ed1ca2c88d5b99e8e3364eadbb547ab0fbc4b01220"
+  },
+  {
+    "file": "components/lvgl__lvgl/tests/src/test_files/fonts/noto/OFL.txt",
+    "sha256": "1778d919f28e548adab94a9dc3cf05549124e53d204c2f4c8164617734dc1a3a"
+  },
+  {
+    "file": "components/lvgl__lvgl/tests/src/test_libs/rnd_unicodes/rnd_unicodes/LICENSE",
+    "sha256": "ad4feab161c3e1f5b12ec323eb5c69688523b32f643684236af765c8931fecd1"
+  },
+  {
+    "file": "components/sahlberg__libsmb2/COPYING",
+    "sha256": "749c710c2b3d5c95906c785f28af9abbe4ce909311e72eb72eee5c6873e2fa6f"
+  },
+  {
+    "file": "components/sahlberg__libsmb2/LICENCE-LGPL-2.1.txt",
+    "sha256": "dc626520dcd53a22f727af3ee42c770e56c97a64fe3adb063799d8ab032fe551"
+  },
+  {
+    "file": "components/waveshare__esp32_p4_platform/LICENSE",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "components/waveshare__esp_lcd_dsi/license.txt",
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  {
+    "file": "components/waveshare__esp_lcd_hx8394/license.txt",
+    "sha256": "a406579cd136771c705c521db86ca7d60a6f3de7c9b5460e6193a2df27861bde"
+  },
+  {
+    "file": "components/waveshare__esp_lcd_ili9881c/license.txt",
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  {
+    "file": "components/waveshare__esp_lcd_jd9365/license.txt",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "components/waveshare__esp_lcd_ota7290b/license.txt",
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  {
+    "file": "fonts/NotoEmoji-OFL.txt",
+    "sha256": "500bb1ccf43df7bbb522112f9133a52b16e1c35e809632f5d8609b179152de5b"
+  },
+  {
+    "file": "libraries/ArduinoJson/LICENSE.txt",
+    "sha256": "4a7ee9c96b28cbf30c5bf7c2d211a0ef57179f0328e68ad7b7fa7d754b7da1a2"
+  },
+  {
+    "file": "arduino/cores/esp32/libb64/LICENSE",
+    "sha256": "cb317b147c23304c28b75da0acd1e425473853b1417faa652e1031231e05eeb1"
+  },
+  {
+    "file": "arduino/libraries/BLE/LICENSE",
+    "sha256": "2788e2454e3bd6d6af9f9b781bde8b5108e6d166f74977a1e51ce4631df03461"
+  },
+  {
+    "file": "arduino/libraries/BLE/NOTICE",
+    "sha256": "035e62e7630ba6b4b7d4f116e2cf6bf06e746a0d9fcfb84346083d293bac6d3d"
+  },
+  {
+    "file": "esp-idf/components/bootloader/subproject/components/micro-ecc/micro-ecc/LICENSE.txt",
+    "sha256": "ffd8b033d2df7568c25a98866bd92b1656f7da82d7f813c0b2eb85ec36611193"
+  },
+  {
+    "file": "esp-idf/components/bt/common/tinycrypt/LICENSE",
+    "sha256": "270e0b63ce74421f1ccaaf03f9c7daa430cdb16c9856259ca4c2e3c74880d589"
+  },
+  {
+    "file": "esp-idf/components/bt/controller/lib_esp32/LICENSE",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "esp-idf/components/bt/controller/lib_esp32c2/esp32c2-bt-lib/NOTICE",
+    "sha256": "9db49cb1e535c496d7655dd54d5481404e7634353dc3bc0817c7d07767acc6e8"
+  },
+  {
+    "file": "esp-idf/components/bt/controller/lib_esp32c3_family/LICENSE",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "esp-idf/components/bt/controller/lib_esp32c5/esp32c5-bt-lib/NOTICE",
+    "sha256": "ebd002217a1a76e3cce23cd89d0916477da6c7907a6a46c8a7f1fb209e3cb333"
+  },
+  {
+    "file": "esp-idf/components/bt/controller/lib_esp32c6/esp32c6-bt-lib/NOTICE",
+    "sha256": "ebd002217a1a76e3cce23cd89d0916477da6c7907a6a46c8a7f1fb209e3cb333"
+  },
+  {
+    "file": "esp-idf/components/bt/controller/lib_esp32h2/esp32h2-bt-lib/NOTICE",
+    "sha256": "a1a74b78d60bf3feb4f493f058ac8ee4022e40387783085171670e34b001d8dd"
+  },
+  {
+    "file": "esp-idf/components/bt/esp_ble_mesh/lib/lib/LICENSE",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "esp-idf/components/bt/host/nimble/nimble/ext/tinycrypt/LICENSE",
+    "sha256": "b2d451fcba3577b118741d733d37ebd15bdd0b6b381e554a7345bdbfa3743108"
+  },
+  {
+    "file": "esp-idf/components/bt/host/nimble/nimble/LICENSE",
+    "sha256": "0deb15bc7df50b1d009c644b008f92e1062909e9521328d337c5fad3a5d4921c"
+  },
+  {
+    "file": "esp-idf/components/bt/host/nimble/nimble/NOTICE",
+    "sha256": "b838c4733a5020cd8e2bafbe70842acd8c8dc7816012965b77d10c1f4c0727f6"
+  },
+  {
+    "file": "esp-idf/components/cmock/CMock/LICENSE.txt",
+    "sha256": "a228c2871b9a779a6542a49470c5b567f2806dddcbcf90af861bb4d39291626c"
+  },
+  {
+    "file": "esp-idf/components/cmock/CMock/vendor/unity/LICENSE.txt",
+    "sha256": "3ed9b51da86f52c729c96cc99fdde6444b2297c788a9cf4ad1d3649dc34c4985"
+  },
+  {
+    "file": "esp-idf/components/console/argtable3/LICENSE",
+    "sha256": "a97df648b7db77f9f6f5e1ef5fe44eb6b154ecb8ae26ad39c92ea44201cce45c"
+  },
+  {
+    "file": "esp-idf/components/console/linenoise/LICENSE",
+    "sha256": "efe1692aa5b869edaa0ac88f95eb0276c1125304ffc636a299db3ebbab47f62b"
+  },
+  {
+    "file": "esp-idf/components/driver/test_apps/components/esp_serial_slave_link/LICENSE",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "esp-idf/components/esp_coex/lib/LICENSE",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "esp-idf/components/esp_phy/lib/LICENSE",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "esp-idf/components/esp_wifi/lib/LICENSE",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "esp-idf/components/esptool_py/LICENSE",
+    "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643"
+  },
+  {
+    "file": "esp-idf/components/freertos/FreeRTOS-Kernel/LICENSE.md",
+    "sha256": "508a77d2e7b51d98adeed32648ad124b7b30241a8e70b2e72c99f92d8e5874d1"
+  },
+  {
+    "file": "esp-idf/components/http_parser/LICENSE.txt",
+    "sha256": "3aced2d086d3f59cafb6589770c30c1e45a5bdf50c1d4375060b81a615db604c"
+  },
+  {
+    "file": "esp-idf/components/json/cJSON/LICENSE",
+    "sha256": "a36dda207c36db5818729c54e7ad4e8b0c6fba847491ba64f372c1a2037b6d5c"
+  },
+  {
+    "file": "esp-idf/components/json/cJSON/tests/unity/docs/license.txt",
+    "sha256": "3ed9b51da86f52c729c96cc99fdde6444b2297c788a9cf4ad1d3649dc34c4985"
+  },
+  {
+    "file": "esp-idf/components/lwip/lwip/contrib/apps/LwipMibCompiler/SharpSnmpLib/license.txt",
+    "sha256": "ef1f7505cfdff240e72602bc50ef1cdba37c681c84611cdf30e4371320c70942"
+  },
+  {
+    "file": "esp-idf/components/lwip/lwip/COPYING",
+    "sha256": "ef4aac92e05e87cd1cdc140870ed52206ba03d4a7fe46c1e11d7ffa6c87d252b"
+  },
+  {
+    "file": "esp-idf/components/mbedtls/mbedtls/framework/LICENSE",
+    "sha256": "11402351e38392230bb8934ba1095c0c0049a296c0f8821f76e4672dff54b490"
+  },
+  {
+    "file": "esp-idf/components/mbedtls/mbedtls/LICENSE",
+    "sha256": "9b405ef4c89342f5eae1dd828882f931747f71001cfba7d114801039b52ad09b"
+  },
+  {
+    "file": "esp-idf/components/mqtt/esp-mqtt/LICENSE",
+    "sha256": "20ed622a5f1a273258b415097609f6a236fb2f23f8c593c63e29e6cc77de0032"
+  },
+  {
+    "file": "esp-idf/components/newlib/COPYING.NEWLIB",
+    "sha256": "0681089a556e93791da82718d68011ba452de245f7f59c3846936304756ac0c0"
+  },
+  {
+    "file": "esp-idf/components/newlib/COPYING.picolibc",
+    "sha256": "fa72ebf6e3c9b3d674f89da06648b0c17d3bcb1ce05ed5956cc102fba1e6964d"
+  },
+  {
+    "file": "esp-idf/components/openthread/lib/LICENSE",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "esp-idf/components/openthread/openthread/LICENSE",
+    "sha256": "e164182fc3e6378533ba706800087469a14dcd5913ee55e2e8ae3fb14f3cdbbb"
+  },
+  {
+    "file": "esp-idf/components/openthread/openthread/NOTICE",
+    "sha256": "1b37f4fbb95506a0529a15c007aa53053e0e2bf03b1547fb244fdebacf49374f"
+  },
+  {
+    "file": "esp-idf/components/openthread/openthread/third_party/jlink/SEGGER_RTT_V640/License.txt",
+    "sha256": "9a160ebc4406ed363f5fb397cc8cd201613ab29e67a2439474f7bafd77e3ce07"
+  },
+  {
+    "file": "esp-idf/components/openthread/openthread/third_party/mbedtls/repo/framework/LICENSE",
+    "sha256": "11402351e38392230bb8934ba1095c0c0049a296c0f8821f76e4672dff54b490"
+  },
+  {
+    "file": "esp-idf/components/openthread/openthread/third_party/mbedtls/repo/LICENSE",
+    "sha256": "9b405ef4c89342f5eae1dd828882f931747f71001cfba7d114801039b52ad09b"
+  },
+  {
+    "file": "esp-idf/components/openthread/openthread/tools/otci/LICENSE",
+    "sha256": "d29b8f5c1c666698dfe7717c53e10f82981e0889a06f8a3ebc093d9dccc35aa4"
+  },
+  {
+    "file": "esp-idf/components/protobuf-c/protobuf-c/LICENSE",
+    "sha256": "b8999cb392cc5bbe8cd679de59584ad8d2f26033123e76f1d662fa14b9d4f287"
+  },
+  {
+    "file": "esp-idf/components/spiffs/spiffs/LICENSE",
+    "sha256": "d19257540156a51ed50c2378e7159066415d8bbbe147779f8deb0d3e73f1b0a7"
+  },
+  {
+    "file": "esp-idf/components/unity/unity/LICENSE.txt",
+    "sha256": "7d710553eaf7174f383699ed4eebac67fe7cda7971cbe892f700cd0e087f860f"
+  },
+  {
+    "file": "esp-idf/components/wpa_supplicant/COPYING",
+    "sha256": "a87ac4e333d0f120408a9d814e40c3672cd27f365af89b4f2f6631f7a9338953"
+  },
+  {
+    "file": "esp-idf/LICENSE",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "esp-idf/tools/catch/LICENSE.txt",
+    "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566"
+  }
+]

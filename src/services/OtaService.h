@@ -1,0 +1,3 @@
+#pragma once
+#include <Arduino.h>
+namespace hp { struct BootHealthReport; enum class OtaState:uint8_t{Idle,PendingBootValidation,Ready,Checking,Downloading,PendingReboot,HealthChecking,Failed}; class OtaService{public:static OtaService&instance();bool begin();void loop();OtaState state()const{return state_;}const String&lastError()const{return lastError_;}bool canCheckForUpdates()const;bool commitIfHealthy(const BootHealthReport&);bool pendingValidation()const{return pendingValidation_;}private:void fail(const char*);OtaState state_=OtaState::Idle;String lastError_;bool pendingValidation_=false;}; }

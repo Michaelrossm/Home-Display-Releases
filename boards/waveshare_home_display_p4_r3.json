@@ -1,0 +1,30 @@
+{
+  "build": {
+    "core": "esp32",
+    "extra_flags": [
+      "-DBOARD_HAS_PSRAM",
+      "-DHOMEDISPLAY_BOARD_WAVESHARE_P4_POE_ETH_D=1",
+      "-DHOMEDISPLAY_P4_REV3_X=1"
+    ],
+    "f_cpu": "400000000L",
+    "f_flash": "80000000L",
+    "f_psram": "200000000L",
+    "flash_mode": "qio",
+    "mcu": "esp32p4",
+    "chip_variant": "esp32p4",
+    "variant": "esp32p4"
+  },
+  "connectivity": ["ethernet"],
+  "debug": {"openocd_target": "esp32p4.cfg"},
+  "frameworks": ["arduino", "espidf"],
+  "name": "Waveshare ESP32-P4-WIFI6-POE-ETH-D 32MB (rev3.x / 400MHz)",
+  "upload": {
+    "flash_size": "32MB",
+    "maximum_ram_size": 327680,
+    "maximum_size": 33554432,
+    "require_upload_port": true,
+    "speed": 460800
+  },
+  "url": "https://docs.waveshare.com/ESP32-P4-WIFI6-POE-ETH",
+  "vendor": "Waveshare"
+}

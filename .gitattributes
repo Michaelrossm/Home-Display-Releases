@@ -1,0 +1,6 @@
+# Preserve original third-party notices and their inventory hashes byte-for-byte.
+licenses/** -text
+LICENSE.md -text
+*.bin -text
+*.jpg -text
+*.png -text

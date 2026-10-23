@@ -1,0 +1,3 @@
+#pragma once
+#include <Arduino.h>
+namespace hp { class RetryPolicy{public:RetryPolicy(uint32_t base=1000,uint32_t max=60000):base_(base),max_(max){}void success(){attempt_=0;next_=0;}void failure(){uint32_t shift=attempt_>6?6:attempt_++;uint32_t wait=base_<<shift;if(wait>max_)wait=max_;uint32_t jitter=esp_random()%(wait/5+1);next_=millis()+wait+jitter;}bool due()const{return !next_||(int32_t)(millis()-next_)>=0;}uint8_t attempts()const{return attempt_;}uint32_t remaining()const{int32_t r=(int32_t)(next_-millis());return r>0?(uint32_t)r:0;}private:uint32_t base_,max_,next_=0;uint8_t attempt_=0;}; }

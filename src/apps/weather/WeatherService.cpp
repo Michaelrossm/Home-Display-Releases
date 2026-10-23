@@ -1,0 +1,7 @@
+#include "WeatherService.h"
+#include "../../services/DiagnosticsService.h"
+#include "../../services/SettingsService.h"
+#include "../../services/NetworkService.h"
+#include "../../services/NetworkWorker.h"
+#include "../../services/PowerManager.h"
+namespace hp { WeatherService& WeatherService::instance(){static WeatherService w;return w;} bool WeatherService::begin(){if(!mux_)mux_=xSemaphoreCreateMutex();return mux_&&BackgroundScheduler::instance().add(this);} WeatherData WeatherService::snapshot(){WeatherData x;if(mux_&&xSemaphoreTake(mux_,pdMS_TO_TICKS(20))==pdTRUE){x=data_;xSemaphoreGive(mux_);}return x;} void WeatherService::updateJob(void*p){static_cast<WeatherService*>(p)->executeUpdate();} void WeatherService::executeUpdate(){WeatherData x=snapshot();auto s=SettingsService::instance().snapshot();if(!client_.update(s.weatherRegion,x))DiagnosticsService::instance().recordHttpFailure();if(mux_&&xSemaphoreTake(mux_,pdMS_TO_TICKS(200))==pdTRUE){data_=x;updateQueued_=false;xSemaphoreGive(mux_);}} void WeatherService::backgroundTick(){if(!NetworkService::instance().online())return;auto current=snapshot();const uint32_t wait=current.online?600000UL:60000UL;if(last_&&millis()-last_<wait)return;if(!mux_||xSemaphoreTake(mux_,pdMS_TO_TICKS(20))!=pdTRUE)return;if(updateQueued_){xSemaphoreGive(mux_);return;}updateQueued_=true;last_=millis();xSemaphoreGive(mux_);if(!NetworkWorker::instance().submit(updateJob,this,"weather")){if(xSemaphoreTake(mux_,pdMS_TO_TICKS(20))==pdTRUE){updateQueued_=false;xSemaphoreGive(mux_);}}} }

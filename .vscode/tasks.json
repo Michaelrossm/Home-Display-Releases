@@ -1,0 +1,10 @@
+{
+  "version":"2.0.0",
+  "tasks":[
+    {"label":"Home-Display: Doctor","type":"shell","command":"python","args":["tools/dev.py","doctor"],"problemMatcher":[]},
+    {"label":"Home-Display: Test","type":"shell","command":"python","args":["tools/dev.py","test"],"group":"test","problemMatcher":[]},
+    {"label":"Home-Display: Build rev3.x DEV","type":"shell","command":"python","args":["tools/dev.py","build","--env","home_display_p4_r3_dev"],"problemMatcher":["$gcc"]},
+    {"label":"Home-Display: Build pre-v3 DEV","type":"shell","command":"python","args":["tools/dev.py","build","--env","home_display_p4_legacy_dev"],"group":{"kind":"build","isDefault":true},"problemMatcher":["$gcc"]},
+    {"label":"Home-Display: Validate source","type":"shell","command":"python","args":["tools/dev.py","validate"],"problemMatcher":[]}
+  ]
+}

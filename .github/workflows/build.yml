@@ -1,0 +1,22 @@
+name: build
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  pio:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        env: [home_display_p4_r3_dev, home_display_p4_legacy_dev]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: python -m pip install -r requirements-dev.txt
+      - run: python tools/dev.py build --env ${{ matrix.env }}
+      # The real Lua VM tests require the pinned component sources from configure.
+      - if: matrix.env == 'home_display_p4_legacy_dev'
+        run: python tools/dev.py test
+      - if: matrix.env == 'home_display_p4_legacy_dev'
+        run: python tools/dev.py validate --production
