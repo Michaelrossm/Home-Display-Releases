@@ -1,7 +1,9 @@
-# Private development notice
+# Öffentlicher Release-Quellcode
 
-This repository contains work in progress.
+Dieses Repository enthält den **öffentlichen Quellcode-Snapshot** und die Downloads von Home Display, beginnend mit Version **0.1.0**.
 
-It is currently maintained as a private development repository and is not intended for redistribution or production use.
+Die laufende Entwicklung und ihre private Commit-Historie werden getrennt gepflegt. Hier werden nur bewusst freigegebene Quellcode-Stände veröffentlicht.
 
-Do not publish the repository until credentials, local configuration, third-party assets, licensing and release documentation have been reviewed.
+Installationshinweise und unterstützte Hardware: [README](README.md) und [Installationsanleitung](docs/INSTALLATION.md). Für eigene Beiträge gelten [Lizenz](LICENSE.md) und [Drittsoftware-Hinweise](THIRD_PARTY_NOTICES.md).
+
+Die Veröffentlichung des Quellcodes ist keine Zusage, dass jede Funktion bereits auf jeder Hardwarekonfiguration getestet wurde. Siehe [Release-Hinweise](docs/RELEASE_0.1.0.md).
