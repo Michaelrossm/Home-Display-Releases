@@ -36,6 +36,21 @@ frischen Checkout nicht setzen. Ein Build ist keine Hardwarevalidierung.
 
 ## Installation und Updates
 
+Downloads für bestätigte pre-v3-Hardware (360 MHz):
+
+- `home-display-0.1.0-p4-legacy-360mhz-ota.bin`: normales P4-OTA-Update.
+- `home-display-0.1.0-p4-legacy-360mhz-factory.bin`: vollständiges 32-MiB-Image,
+  ausschließlich für Erstinstallation oder absichtlichen Werksreset, Flash-Adresse
+  `0x0`. Überschreibt auch NVS, Apps und interne Benutzerdaten; vorher sichern.
+- `home-display-0.1.0-p4-legacy-360mhz-signed.zip`: obige Images, leere initiale
+  Dateisysteme, signiertes Manifest, öffentlicher Prüfschlüssel und Lizenztexte.
+- `SHA256SUMS`: Prüfsummen der veröffentlichten Downloads.
+
+Die Factory-Datei niemals im normalen Web-OTA-Uploader auswählen. Die einzelnen
+`appfs`-/`systemdata`-Images im Paket sind Initialisierungsdateien und kein
+Benutzerdaten-Backup. Für 400 MHz werden mit diesem ersten Release keine
+ungeprüften Binärdateien angeboten; das entsprechende Buildprofil bleibt erhalten.
+
 - OTA: ausschließlich das zur Hardware passende P4-App-Image im vorhandenen
   Web-Firmware-Uploader auswählen, niemals ein Factory- oder C6-Image.
 - Factory-Pakete ausschließlich zur Erstinstallation oder zum bewusst vollständigen

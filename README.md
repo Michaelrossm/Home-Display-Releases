@@ -5,12 +5,15 @@ Firmwareversion: 0.1.0, Konfigurationsschema 2. Release-Vorbereitung; ein erfolg
 Build ersetzt keine Prüfung am echten Gerät.
 
 Release-Hinweise und Hardwareprofile: [Version 0.1.0](docs/RELEASE_0.1.0.md).
+Öffentliche Quellcode-Snapshots und Downloads: [Home-Display-Releases](https://github.com/Michaelrossm/Home-Display-Releases/releases).
+Die laufende Entwicklung bleibt im privaten Entwicklungsrepository.
 Projektlizenz: [PolyForm Noncommercial 1.0.0](LICENSE.md).
 [Drittsoftware](THIRD_PARTY_NOTICES.md) behält ihre jeweiligen eigenen Lizenzen.
 
 ## Bauen und prüfen
 
 ```powershell
+python tools/dev.py setup
 python tools/dev.py doctor
 python tools/dev.py test
 python tools/dev.py validate
