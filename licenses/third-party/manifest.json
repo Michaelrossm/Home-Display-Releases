@@ -160,16 +160,24 @@
     "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
   },
   {
-    "file": "components/espressif__esp_wifi_remote/scripts/copyright_header.h",
-    "sha256": "3f1f5a14957ce74b5409f9fa151c0963a5e8ef8a928faafa90e632af49d9ab71"
-  },
-  {
     "file": "components/espressif__freetype/examples/color-emoji-example/main/assets/LICENSE-OFL.txt",
     "sha256": "6a73f9541c2de74158c0e7cf6b0a58ef774f5a780bf191f2d7ec9cc53efe2bf2"
   },
   {
     "file": "components/espressif__freetype/freetype/LICENSE.TXT",
     "sha256": "bd36c8b474855fa294c2ec5c184544478ef3720aad37d65a6296a4f264fd2d3b"
+  },
+  {
+    "file": "components/espressif__freetype/freetype/src/tools/no-copyright",
+    "sha256": "3e2c8db4e09e12e9a138ba7ba8c0b762eff36802c6c1273d73ac049d4949a298"
+  },
+  {
+    "file": "components/espressif__freetype/freetype/src/tools/update-copyright",
+    "sha256": "ae5b05f1d3f5235eb91ce41518be95022443f68bce5d200b6e1cc1fb57a5017e"
+  },
+  {
+    "file": "components/espressif__freetype/freetype/src/tools/update-copyright-year",
+    "sha256": "f3e4b6f122dce96b6ba85c3d600fd19a766ab5e0fd0cbdeee785d0d88f111d3a"
   },
   {
     "file": "components/espressif__freetype/freetype/subprojects/dlg/LICENSE",
@@ -384,6 +392,14 @@
     "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
   },
   {
+    "file": "project-components/home_image_codecs/WebP-COPYING",
+    "sha256": "5aec868f669e384a22372a4e8a1a6cd7d44c64cd451f960ca69cc170d1e13acf"
+  },
+  {
+    "file": "project-components/home_image_codecs/WebP-PATENTS",
+    "sha256": "cc3273e0694ea5896145e0677699b53471b03ea43021ddc50e7923fbb9f5023c"
+  },
+  {
     "file": "fonts/NotoEmoji-OFL.txt",
     "sha256": "500bb1ccf43df7bbb522112f9133a52b16e1c35e809632f5d8609b179152de5b"
   },
@@ -582,5 +598,9 @@
   {
     "file": "esp-idf/tools/catch/LICENSE.txt",
     "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566"
+  },
+  {
+    "file": "esp-idf/tools/ci/check_copyright_ignore.txt",
+    "sha256": "597c58370f8ebc3f26fe796b1072abebb1057f2ab2ea70a4245d28513e41ec1b"
   }
 ]

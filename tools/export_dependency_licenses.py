@@ -16,7 +16,8 @@ def collect(roots,destination):
         if not base.exists():continue
         for source in sorted(base.rglob('*')):
             if not source.is_file() or source.is_symlink():continue
-            if not re.search(r'^(licen[cs]e|copying|notice|copyright|patents|ofl)(?:$|[._-])|[-_]OFL(?:\.|$)',source.name,re.I):continue
+            if source.suffix.lower() in ('.py','.yml','.yaml','.h','.c','.cpp'):continue
+            if not re.search(r'(?:^|[._ -])(licen[cs]e|copying|notice|copyright|patents|ofl)(?:$|[._ -])',source.name,re.I):continue
             if source.stat().st_size>2*1024*1024:raise ValueError('Unexpected large notice: '+str(source))
             relative=Path(category)/source.relative_to(base)
             target=destination/relative;target.parent.mkdir(parents=True,exist_ok=True)

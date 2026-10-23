@@ -141,9 +141,11 @@ int main(){LuaApp app;assert(access(&app,AppPermission::Camera));assert(access(&
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)/'component';root.mkdir();out=Path(d)/'licenses'
             (root/'LICENSE').write_text('Original third-party license')
+            (root/'WebP-PATENTS').write_text('Original patent grant')
             (root/'private-settings.json').write_text('not a notice')
-            self.assertEqual(tool.collect([('component',root)],out),1)
+            self.assertEqual(tool.collect([('component',root)],out),2)
             self.assertEqual((out/'component/LICENSE').read_text(),'Original third-party license')
+            self.assertEqual((out/'component/WebP-PATENTS').read_text(),'Original patent grant')
             self.assertFalse((out/'component/private-settings.json').exists())
 
     def test_signed_release_contains_license_and_verifiable_manifest_not_private_key(self):
