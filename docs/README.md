@@ -32,7 +32,7 @@ für Build, Partitionen und aktuellen Prüfstand gelten die folgenden Quellen.
 - [Kalender](NATIVE_CALENDAR.md), [Termindetails](appointment-details.md)
 - [Telefonbuch](NATIVE_PHONEBOOK.md), [Benutzerverwaltung](shared-user-management.md)
 - [Konten](cloud-accounts.md), [Synchronisation](oauth-calendar.md)
-- [Sprechanlage](NATIVE-INTERCOM.md), [Taschenrechner](native-calculator.md)
+- [Sprechanlagen-Architektur (derzeit deaktiviert)](INTERCOM_ARCHITECTURE.md), [Taschenrechner](native-calculator.md)
 
 ## Performance und Diagnose
 

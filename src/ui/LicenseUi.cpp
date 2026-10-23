@@ -29,7 +29,7 @@ void open(lv_event_t* event){
     auto* label=lv_label_create(scroll);
     lv_obj_set_width(label,LV_PCT(100));
     lv_label_set_long_mode(label,LV_LABEL_LONG_WRAP);
-    SettingsWidgets::readableText(label,&lv_font_montserrat_16);
+    SettingsWidgets::readableText(label,&lv_font_montserrat_18);
     // Embedded read-only text stays in flash; no large RAM copy or storage I/O.
     lv_label_set_text_static(label,text);
 }
@@ -43,7 +43,7 @@ void build(lv_obj_t* parent){
     SettingsWidgets::label(parent,"Über Home-Display · Lizenzen",0);
     const String version=String("Home-Display ")+hp::build::kVersion+" · "+hp::build::kProfile;
     SettingsWidgets::label(parent,version.c_str(),0);
-    SettingsWidgets::label(parent,"Copyright 2026 Michael Roßmann · PolyForm Noncommercial 1.0.0",0,&lv_font_montserrat_16);
+    SettingsWidgets::label(parent,"Copyright 2026 Michael Roßmann · PolyForm Noncommercial 1.0.0",0,&lv_font_montserrat_14);
     button(parent,"Projektlizenz anzeigen",projectText());
     button(parent,"Drittanbieter und Lizenzhinweise",thirdPartyText());
 }
