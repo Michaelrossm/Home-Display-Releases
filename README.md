@@ -1,10 +1,11 @@
 # Home-Display ESP32-P4 — VNext
 
 Lokale Firmware für Waveshare ESP32-P4-WIFI6-POE-ETH-D mit 10,1-Zoll-DSI-Touchdisplay.
-Firmwareversion: 0.1.0, Konfigurationsschema 2. Release-Vorbereitung; ein erfolgreicher
+Firmwareversion: 0.1.0, Konfigurationsschema 2. Ein erfolgreicher
 Build ersetzt keine Prüfung am echten Gerät.
 
 Release-Hinweise und Hardwareprofile: [Version 0.1.0](docs/RELEASE_0.1.0.md).
+[Prüfstand und bekannte Testgrenzen](docs/RELEASE_0.1.0_VERIFICATION.md).
 Öffentliche Quellcode-Snapshots und Downloads: [Home-Display-Releases](https://github.com/Michaelrossm/Home-Display-Releases/releases).
 Die laufende Entwicklung bleibt im privaten Entwicklungsrepository.
 Projektlizenz: [PolyForm Noncommercial 1.0.0](LICENSE.md).
