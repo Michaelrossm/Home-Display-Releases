@@ -153,7 +153,7 @@ Alle Eingaben sind veränderbar: Flasche leer, Druckminderer, Gasfüllmenge, Fla
 
 ## Lizenz und Urheberrecht
 
-Copyright © 2026 Michael Roßmann. Die Projektlizenz wurde vom IR-Tracker übernommen: **PolyForm Noncommercial 1.0.0**. Die vollständige Lizenz steht in `LICENSE.md` und direkt auf der Waage unter `/license` sowie in der Weboberfläche unter **Lizenz und Urheberrecht**. Drittsoftware behält ihre jeweiligen Lizenzbedingungen; siehe `docs/legal/THIRD_PARTY_NOTICES.md` und `/third-party`. Die englische Originalfassung der Projektlizenz ist maßgeblich.
+Copyright © 2026 Michael Roßmann. Der eigene Projektcode steht unter **GNU GPL Version 3.0 (GPL-3.0-only)**. Die vollständige Lizenz steht in `LICENSE.md` und direkt auf der Waage unter `/license` sowie in der Weboberfläche unter **Lizenz und Urheberrecht**. Drittsoftware behält ihre jeweiligen Lizenzbedingungen; siehe `docs/legal/THIRD_PARTY_NOTICES.md` und `/third-party`. Die englische Originalfassung der Projektlizenz ist maßgeblich.
 
 ## Kalibrier-API (v1.0.13)
 
