@@ -76,8 +76,7 @@ Releases wird nicht behauptet.
 
 ## Lizenzen und Signaturen
 
-Projektcode: PolyForm Noncommercial License 1.0.0, übernommen aus IR-Tracker.
-Verbindlicher Originaltext: `LICENSE.md`. Fremdsoftware behält ihre eigenen
+Der ursprünglich veröffentlichte Stand v0.1.0 wurde mit PolyForm Noncommercial License 1.0.0 ausgeliefert. Die spätere Umstellung des Repository-Quellcodes auf GPL-3.0-only ändert **nicht rückwirkend** die Lizenztexte in den bereits veröffentlichten v0.1.0-Binärdateien und Downloadpaketen. Für neu erstellte Builds gilt der aktuelle Quellcode-Lizenzstand aus `LICENSE.md`. Fremdsoftware behält ihre eigenen
 Lizenzen; Originaltexte liegen unter `licenses/third-party` und bei den Originalquellen.
 Die Übersicht ersetzt keine verbindlichen Fremdlizenzen oder rechtliche Prüfung.
 
