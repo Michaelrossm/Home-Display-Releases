@@ -43,7 +43,7 @@ void build(lv_obj_t* parent){
     SettingsWidgets::label(parent,"Über Home-Display · Lizenzen",0);
     const String version=String("Home-Display ")+hp::build::kVersion+" · "+hp::build::kProfile;
     SettingsWidgets::label(parent,version.c_str(),0);
-    SettingsWidgets::label(parent,"Copyright 2026 Michael Roßmann · PolyForm Noncommercial 1.0.0",0,&lv_font_montserrat_14);
+    SettingsWidgets::label(parent,"Copyright 2026 Michael Roßmann · GNU GPL v3.0",0,&lv_font_montserrat_14);
     button(parent,"Projektlizenz anzeigen",projectText());
     button(parent,"Drittanbieter und Lizenzhinweise",thirdPartyText());
 }
