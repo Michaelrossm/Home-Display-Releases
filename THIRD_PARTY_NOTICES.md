@@ -1,7 +1,7 @@
 # Home-Display: Hinweise zu Drittsoftware
 
-Der eigene Home-Display-Projektcode steht unter der PolyForm Noncommercial
-License 1.0.0 (siehe LICENSE.md), Copyright 2026 Michael Roßmann.
+Der eigene Home-Display-Projektcode steht unter der GNU General Public License
+Version 3.0 (GPL-3.0-only) (siehe LICENSE.md), Copyright 2026 Michael Roßmann.
 Diese Lizenz ersetzt oder verändert keine Lizenz eingebundener Fremdsoftware.
 
 Wesentliche Komponenten und ihre Originalquellen:
@@ -30,4 +30,6 @@ Build exportierten Original-Lizenzdateien im Ordner licenses/third-party.
 Diese Übersicht ist kein Ersatz für die verbindlichen Originaltexte und keine
 rechtliche Zertifizierung. Fremdcode bleibt seinen jeweiligen Urhebern zugeordnet.
 
-Projektlizenz: https://polyformproject.org/licenses/noncommercial/1.0.0
+Projektlizenz: https://www.gnu.org/licenses/gpl-3.0.html
+
+Die GPL gilt nur für den entsprechend lizenzierten eigenen Projektcode; bei der Firmwareweitergabe sind zusätzlich die Pflichten aus LGPL-2.1 und anderen Fremdlizenzen zu erfüllen. Ein bloßes Beilegen von Lizenztexten ersetzt diese Pflichten nicht.
