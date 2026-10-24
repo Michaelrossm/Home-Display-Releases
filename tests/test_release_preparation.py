@@ -90,9 +90,9 @@ int main(){LuaApp app;assert(access(&app,AppPermission::Camera));assert(access(&
 
     def test_license_is_full_and_shared_by_native_and_web(self):
         license=(ROOT/'LICENSE.md').read_text(encoding='utf-8')
-        self.assertIn('PolyForm Noncommercial License 1.0.0',license)
-        self.assertIn('## No Liability',license)
-        self.assertIn('Required Notice: Copyright (c) 2026 Michael Roßmann',license)
+        self.assertIn('GNU GENERAL PUBLIC LICENSE',license)
+        self.assertIn('TERMS AND CONDITIONS',license)
+        self.assertIn('Copyright © 2026 Michael Roßmann',license)
         cmake=(ROOT/'src/CMakeLists.txt').read_text()
         self.assertIn('EMBED_TXTFILES',cmake);self.assertIn('../LICENSE.md',cmake)
         ini=(ROOT/'platformio.ini').read_text()
