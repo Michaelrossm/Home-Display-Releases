@@ -56,4 +56,4 @@ Weitere technische Informationen: [Dokumentation](docs/README.md), [Buildprofile
 
 ## Lizenz
 
-Eigener Projektcode: [PolyForm Noncommercial 1.0.0](LICENSE.md); kommerzielle Nutzung ist nicht durch diese Lizenz erlaubt. Drittkomponenten behalten [ihre jeweiligen Lizenzen](THIRD_PARTY_NOTICES.md). Die Entwicklung wird unabhängig vom öffentlichen Release-Snapshot fortgeführt; die private Entwicklungs-Commit-Historie ist nicht Bestandteil dieses Repositorys.
+Eigener Projektcode: [GNU GPL Version 3.0 (GPL-3.0-only)](LICENSE.md); auch kommerzielle Nutzung ist unter den GPL-Bedingungen erlaubt. Drittkomponenten behalten [ihre jeweiligen Lizenzen](THIRD_PARTY_NOTICES.md). Die Entwicklung wird unabhängig vom öffentlichen Release-Snapshot fortgeführt; die private Entwicklungs-Commit-Historie ist nicht Bestandteil dieses Repositorys.
