@@ -6,9 +6,9 @@ Dieses CO₂-Waagen-Projekt verwendet folgende externe Komponenten unter eigenen
 - PlatformIO Espressif32 Platform — Apache-2.0.
 - bogde/HX711 0.7.5 — MIT, © Bogdan Necula und Mitwirkende.
 
-Die PolyForm-Noncommercial-Lizenz des Projektcodes ändert diese Fremdlizenzen nicht.
+Die GNU GPL Version 3.0 des eigenen Projektcodes ändert diese Fremdlizenzen nicht.
 Verbindliche Lizenztexte und Urheberhinweise der jeweiligen Komponenten sind beim Hersteller/Quellprojekt einzusehen und bei Weitergabe einzuhalten.
 
 ## English
 
-Third-party components retain their own licenses: Arduino Core for ESP32 (LGPL-2.1-or-later and separate bundled component licenses), PlatformIO Espressif32 Platform (Apache-2.0), and bogde/HX711 0.7.5 (MIT). The project's PolyForm Noncommercial license does not override these licenses.
+Third-party components retain their own licenses: Arduino Core for ESP32 (LGPL-2.1-or-later and separate bundled component licenses), PlatformIO Espressif32 Platform (Apache-2.0), and bogde/HX711 0.7.5 (MIT). The project's GNU GPL v3.0 license does not override these licenses.
