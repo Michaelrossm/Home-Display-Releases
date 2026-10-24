@@ -18,7 +18,7 @@
   ],
   "installable_apps": "External/local packages; not tracked in this firmware repository",
   "disabled_features": ["intercom"],
-  "license": "PolyForm-Noncommercial-1.0.0",
+  "license": "GPL-3.0-only",
   "partition_layout": {
     "ota_0": "9 MiB",
     "ota_1": "9 MiB",
