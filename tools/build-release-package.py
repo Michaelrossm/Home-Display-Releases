@@ -13,7 +13,7 @@ def main():
  if a.version!=version:raise SystemExit('Release version differs from BuildInfo')
  hardware='p4-r3-400mhz' if '_r3_' in a.profile else 'p4-legacy-360mhz'
  base=f'home-display-{a.version}-{hardware}'
- doc={"format":1,"product":"Home-Display","firmwareVersion":a.version,"firmware":meta(a.firmware),"profile":a.profile,"license":"PolyForm-Noncommercial-1.0.0","disabledFeatures":["intercom"]}
+ doc={"format":1,"product":"Home-Display","firmwareVersion":a.version,"firmware":meta(a.firmware),"profile":a.profile,"license":"GPL-3.0-only","disabledFeatures":["intercom"]}
  if a.systemdata:doc['systemData']=meta(a.systemdata)
  if a.appfs:doc['appFs']=meta(a.appfs)
  if a.factory:doc['factory']=meta(a.factory)
